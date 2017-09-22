@@ -1,8 +1,5 @@
-__author__ = 'michel'
+__author__ = 'C40'
 
-import os
-import urllib.request
-import urllib.response
 import sys
 
 
@@ -43,26 +40,35 @@ def strings():
     print(" >Use [\"start\" : \" to less 1\" ]:\n \"Michel\"[1:5] = " + "Michel"[1:5])
     print(" >Use [\"first\" : \" to less 1\" ]:\n \"Michel\"[:5] = " + "Michel"[:5])
     print(" >Use [\"start\" : \"end\" ]:\n \"Michel\"[3:] = " + "Michel"[3:])
+    print(" >Use [\"start\" : \"end\" ] return all:\n \"Michel\"[:] = " + "Michel"[:])
     print(" >Use [len(string)] to return size string:\n len(\"Michel\") = " + str(len("Michel")))
 
     return None
 
+def charset():
+    print(" >Use [u] before string for UNICODE:\n print(u\"Test½\") = " + u"Test½")
+    print(" >Use [r] before string for RAW:\n print(r\"Test½\") = " + r"Test½")
+    print(" >Use [encode] method and charset to encode a string: u\"äöü\".encode('utf-8') = ")
+    print(u"äöü".encode("utf-8"))
+
+    return None
 
 def start():
 
-    print(("|"*10) + " Michel Gutardo Ramos de Lima (C40) " + ("|"*10) + "\n" + (">"*10) + " Testing Python 2.7 " + ("<"*10) + "\n")
+    print(("|"*10) + " Michel Gutardo Ramos de Lima (C40) " + ("|" * 10) + "\n" + (">" * 10) + " Testing Python 2.7 " +
+          ("<" * 10) + "\n")
 
     print("Choose an option:")
     print("""
     Python Comments  [1]
     Python Operators [2]
     Python Strings   [3]
-    Python Modules   [4]
+    Python Unicode   [4]
     Python Modules   [9]""")
 
     option = int(input("Option:"))
 
-    choose = {1: comments, 2: operators, 3: strings, 4: modules, 9: exit}
+    choose = {1: comments, 2: operators, 3: strings, 4: charset, 9: exit}
 
     try:
         if option == 9:
@@ -78,7 +84,7 @@ def start():
 
 
 while start() < 9:
-    print("\n"*10)
+    print("\n"*5)
     start()
 
 
